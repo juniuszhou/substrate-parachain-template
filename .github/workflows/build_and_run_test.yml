@@ -33,7 +33,7 @@ jobs:
         default: true
 
     - name: Run cargo fmt check
-      run: make fmtcheck
+      run: cargo fmt --all -- --check
 
   check-cargo-clippy:
     runs-on: ubuntu-latest
