@@ -1,0 +1,20 @@
+[relaychain]
+default_command = "../polkadot/target/release/polkadot"
+default_args = [ "-lparachain=warn" ]
+
+chain = "rococo-local"
+  # relaychain nodes are by default validators
+  [[relaychain.nodes]]
+  name = "alice"
+
+  [[relaychain.nodes]]
+  name = "bob"
+
+[[parachains]]
+id = 1000
+cumulus_based = true
+
+  [parachains.collator]
+  name = "parachain"
+  command = "./target/release/parachain-template-node"
+
